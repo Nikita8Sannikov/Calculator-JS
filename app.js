@@ -68,7 +68,7 @@ function formatNumber(number){
 function clickTheOperator(op) {
     // calculateResult() 
     operator = op
-    if(currentValue.trim() != ''){
+    if(resultElement.innerHTML.trim() != ''){
     input = parseFloat(currentValue) // Сохраняем текущее значение в input
     currentValue = '' // Обнуляем текущее значение
     }
@@ -83,6 +83,7 @@ ac.addEventListener('click',()=>{
 change.addEventListener('click', ()=>{
     resultElement.innerHTML = - resultElement.innerHTML 
     currentValue = -currentValue
+    console.log(currentValue)
 })
 
 percent.addEventListener('click', ()=>{
