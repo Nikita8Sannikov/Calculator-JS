@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+  background: black;  
+}
+
+div{
+  box-sizing: border-box;
+}
+
+/* #e9a03b желтый кнопки операторов */
+/* #f7f7f7 белый сами цифры и оперы*/
+
+/* #a0a0a0 светло серый кнопки % =/- */
+/* #313131 темно серый кнопки цифр */
+.circle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  align-content: center;  
+  text-align: center; 
+  cursor: pointer;
+}
+.oval{
+  width: 100px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 20px;
+  align-content: center;  
+  text-align: center; 
+  cursor: pointer;
+}
+
+.nums{
+  background:#313131;
+  color: #f7f7f7;
+  display: inline-block;
+}
+
+.sub{
+  background:#313131;
+  color: #f7f7f7;
+  display: inline-block;
+}
+
+.ops{
+  background: #e9a03b;
+  color: #f7f7f7;
+}
+
+.active{
+  background: #f7f7f7;
+  color: #e9a03b;
+}
+
+.dops{
+  background: #a0a0a0;
+  color: black;
+  display: inline-block;
+  transition: all .7s ease-out;
+}
+
+.touch{
+  background: #f7f7f7;
+  color: black;
+  display: inline-block;
+  
+}
+
+
+.dopBlock{
+  /* display: flex; */
+  /* border: 2px solid red; */
+  position: absolute;
+  top: 50px;
+  
+}
+.numBlock1{
+  /* display: flex; */
+  /* border: 2px solid red; */
+  position: absolute;
+  top: 200px;
+}
+.numBlock2{
+  /* display: flex; */
+  /* border: 2px solid red; */
+  position: absolute;
+   top: 150px;
+}
+.numBlock3{
+  /* display: flex; */
+  /* border: 2px solid red; */
+  position: absolute;
+  top: 100px;
+}
+
+.opsBlock{
+  /* display:flex; */
+  /* border: 2px solid red; */
+  position: absolute;
+  left: 160px;
+  top: 50px;
+}
+.submit{
+   /* border: 2px solid red;  */
+   position: absolute;
+   top: 250px;
+}
+
+.result{
+  position: absolute;
+  right: 0;
+  max-width: 200px;
+  /* border: 2px solid red;  */
+  font-size: 50px;
+  color: white;
+}
+
+.container{
+/* display:flex; */
+  /* align-items: flex-start; */
+ /* border: 2px solid blue; */
+ position: relative;
+ height: 300px;
+ width: 215px;
+ margin: auto;
+}
