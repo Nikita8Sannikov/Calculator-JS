@@ -10,8 +10,6 @@
   border: none;
 }
 
-
-
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none; 
@@ -46,7 +44,7 @@ body.light-theme {
 } 
 .ops.light-theme {
   background: #ffa62e ;
-  color: black;
+  color: white;
 } 
 .sub.light-theme {
   background: #565656 ;
@@ -54,7 +52,21 @@ body.light-theme {
 } 
 
 
+.ops.active-light{
+  background: #f38c01;
+  color: white;
+}
 
+.nums.touch-light{
+  background: #959393;
+  color: black;
+  display: inline-block;
+}
+.dops.touch-light{
+  background: #2c2c2c;
+  color: white;
+  display: inline-block;
+}
 
 
 

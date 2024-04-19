@@ -48,11 +48,26 @@ function clearActiveClasses () {
         op.classList.remove('active')
     })
 }
-function clearTouchClasses () {
-    dops.forEach( (dopElement) =>{
-        dopElement.classList.remove('touch')
+function clearActiveLightClasses () {
+    ops.forEach( (op) =>{
+        op.classList.remove('active-light')
     })
 }
+function clearTouchClasses (elems) {
+    elems.forEach( (element) =>{
+        element.classList.remove('touch')
+    })
+}
+function  clearTouchLightClasses (elems) {
+    elems.forEach( (element) =>{
+        element.classList.remove('touch-light')
+    })
+}
+// function clearTouchClasses () {
+//     dops.forEach( (dopElement) =>{
+//         dopElement.classList.remove('touch')
+//     })
+// }
 
 function clickTheNumber(num) {
     currentValue += num
@@ -104,34 +119,79 @@ percent.addEventListener('click', ()=>{
 
 
 
+// nums.forEach( (num) =>{
+//     resultElement.innerHTML = 0
+//     num.addEventListener('click', () =>{
+//         clickTheNumber(num.innerHTML)
+//         // clearTouchClasses ()
+//         num.classList.add('touch')
+//         setTimeout(()=>{
+//             clearTouchClasses(nums)
+//             // num.classList.remove('touch')
+//         }, 350)
+//     })
+    
+// })
+
 nums.forEach( (num) =>{
     resultElement.innerHTML = 0
     num.addEventListener('click', () =>{
         clickTheNumber(num.innerHTML)
-        clearTouchClasses ()
+        if(num.classList.contains('light-theme')){
+            console.log(true)
+            
+        num.classList.add('touch-light')
+        setTimeout(()=>{
+            clearTouchLightClasses(nums)
+        }, 350)
+    
+    }else{
         num.classList.add('touch')
         setTimeout(()=>{
-            num.classList.remove('touch')
+            clearTouchClasses(nums)
         }, 350)
+    }
     })
     
 })
 
+
 ops.forEach(opElement => {
     opElement.addEventListener('click', () => {
         clickTheOperator(opElement.innerHTML)
+        if(opElement.classList.contains('light-theme')){
+            console.log(true)
+            clearActiveLightClasses ()
+            opElement.classList.add('active-light')
+    }else{
         clearActiveClasses ()
         opElement.classList.add('active')
+    }
+        
     })
 })
+// ops.forEach(opElement => {
+//     opElement.addEventListener('click', () => {
+//         clickTheOperator(opElement.innerHTML)
+//         clearActiveClasses ()
+//         opElement.classList.add('active')
+//     })
+// })
 
 dops.forEach(dopElement => {
     dopElement.addEventListener('click', () => {
-        clearTouchClasses ()
+        if(dopElement.classList.contains('light-theme')){
+            console.log(true)
+            dopElement.classList.add('touch-light')
+        setTimeout(()=>{
+            clearTouchLightClasses(dops)
+        }, 350)
+    }else{
         dopElement.classList.add('touch')
         setTimeout(()=>{
-             dopElement.classList.remove('touch')
+            clearTouchClasses (dops) 
         }, 350)
+    }
     })
 })
 
@@ -185,3 +245,18 @@ submitBtn.addEventListener('click', () => {
     console.log('=input:',input)
     }
 });
+
+
+nums.forEach( (num) =>{
+    if(num.classList.contains('light-theme')){
+        console.log(true)
+        num.addEventListener('click', () =>{
+    num.classList.add('touch-light')
+    setTimeout(()=>{
+        clearTouchLightClasses(nums)
+    }, 350)
+})
+}
+})
+
+
