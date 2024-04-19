@@ -10,10 +10,9 @@ const submitBtn = document.querySelector('#submit')
 const ac = document.querySelector('#ac')
 const percent = document.querySelector('#percent')
 const change = document.querySelector('#change')
-let input = 0
+let input = null
 let operator = '+'
 let currentValue = ''
-let previousValue = ''
 
 // plusBtn.onclick = function() {
 //     operator = '+'
@@ -58,6 +57,7 @@ function clickTheNumber(num) {
     currentValue += num
     clearActiveClasses ()
     const formatedValue = formatNumber(parseFloat(currentValue))
+    console.log('current:',currentValue)
     resultElement.innerHTML = formatedValue
 }
 
@@ -66,17 +66,29 @@ function formatNumber(number){
 }
 
 function clickTheOperator(op) {
-    operator = op
-    if(resultElement.innerHTML.trim() != ''){
-    input = parseFloat(currentValue) // Сохраняем текущее значение в input
-    currentValue = '' // Обнуляем текущее значение
+    if (currentValue !== ''){
+        if (input !== null){
+            input = calculateResult(input, currentValue, operator)
+            console.log('newInput:',input)
+        }else{
+            input = parseFloat(currentValue) // Сохраняем текущее значение в input
+            console.log('input:',input)
+        }
     }
+    operator = op
+    // if(resultElement.innerHTML.trim() != ''){
+    // input = parseFloat(currentValue) // Сохраняем текущее значение в input
+    currentValue = '' // Обнуляем текущее значение
+    // }
 }
 
 ac.addEventListener('click',()=>{
     clearActiveClasses ()
     resultElement.innerHTML = 0
     currentValue = ''
+    input = null
+    // console.log('current:',currentValue)
+    // console.log('input:',input)
 })
 
 change.addEventListener('click', ()=>{
@@ -125,26 +137,35 @@ dops.forEach(dopElement => {
 
 
 
-function calculateResult() {
-    const num2 = parseFloat(currentValue) // Получаем второе число
+function calculateResult(input, current, operator) {
+    const num2 = parseFloat(current) // Получаем второе число
     let result;
     if(operator == '+'){
-        result =  +(input + num2).toFixed(2)
+        result =  +(input + num2)
+        // console.log('plus',typeof(result))
     }else if(operator == '-'){
          result = input - num2
+        //  console.log('minus',typeof(result))
     }else if(operator == '*'){
         result = input * num2
+        // console.log('mul',typeof(result))
     }else if(operator == '/'){
         result = +(input / num2).toFixed(2)
+        // console.log('dev',typeof(result))
     }
     const formatedResult = formatNumber(parseFloat(result))
     resultElement.innerHTML = formatedResult
-    // Обновляем input для начала нового цикла
-    input = result
-    currentValue = ''
+ // Обновляем input для начала нового цикла
+    // input = result
+    // currentValue = ''
+    return parseFloat(result)
 }
 
 
-
-
-submitBtn.addEventListener('click', calculateResult);
+submitBtn.addEventListener('click', () => {
+    if(input !== null && currentValue !== ''){
+    calculateResult(input, currentValue, operator)
+    console.log('=current:',currentValue)
+    console.log('=input:',input)
+    }
+});
