@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+.btn-toggle{
+  /* margin: 0 -63px; */
+  background: #e9a03b;
+  color: #f7f7f7;
+  border: none;
+}
+
+
+
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none; 
@@ -13,6 +22,42 @@
 body{
   background: black;  
 }
+
+body.light-theme {
+  background: #f7f7f7;
+}
+/* #f1f2f4 светлосерый для цвет для темных копок  */
+/* #dadbe0 темносерый для светлосерызх кнопок */
+/* ##ffa62e для желтого и текст блэк */
+.result .light-theme {
+  color: black;
+}
+
+.btn-toggle.light-theme {
+  background: #313131;
+}
+.nums.light-theme {
+  background: #c4c4c5;
+  color: black;
+} 
+.dops.light-theme {
+  background: #565656 ;
+  color: white;
+} 
+.ops.light-theme {
+  background: #ffa62e ;
+  color: black;
+} 
+.sub.light-theme {
+  background: #565656 ;
+  color: white;
+} 
+
+
+
+
+
+
 
 div{
   box-sizing: border-box;

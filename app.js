@@ -10,6 +10,7 @@ const submitBtn = document.querySelector('#submit')
 const ac = document.querySelector('#ac')
 const percent = document.querySelector('#percent')
 const change = document.querySelector('#change')
+const btnSwitch = document.querySelector(".btn-toggle")
 let input = null
 let operator = '+'
 let currentValue = ''
@@ -134,6 +135,21 @@ dops.forEach(dopElement => {
     })
 })
 
+btnSwitch.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme')
+    resultElement.classList.toggle('light-theme')
+    btnSwitch.classList.toggle('light-theme')
+    submitBtn.classList.toggle('light-theme')
+    nums.forEach( (num) =>{
+        num.classList.toggle('light-theme')
+    })
+    dops.forEach( (dop) =>{
+        dop.classList.toggle('light-theme')
+    })
+    ops.forEach( (op) =>{
+        op.classList.toggle('light-theme')
+    })
+  })
 
 
 
