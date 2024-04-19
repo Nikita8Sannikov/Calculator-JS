@@ -13,6 +13,7 @@ const change = document.querySelector('#change')
 let input = 0
 let operator = '+'
 let currentValue = ''
+let previousValue = ''
 
 // plusBtn.onclick = function() {
 //     operator = '+'
@@ -55,7 +56,6 @@ function clearTouchClasses () {
 
 function clickTheNumber(num) {
     currentValue += num
-    // resultElement.innerHTML = currentValue
     clearActiveClasses ()
     const formatedValue = formatNumber(parseFloat(currentValue))
     resultElement.innerHTML = formatedValue
@@ -66,7 +66,6 @@ function formatNumber(number){
 }
 
 function clickTheOperator(op) {
-    // calculateResult() 
     operator = op
     if(resultElement.innerHTML.trim() != ''){
     input = parseFloat(currentValue) // Сохраняем текущее значение в input
@@ -83,7 +82,6 @@ ac.addEventListener('click',()=>{
 change.addEventListener('click', ()=>{
     resultElement.innerHTML = - resultElement.innerHTML 
     currentValue = -currentValue
-    console.log(currentValue)
 })
 
 percent.addEventListener('click', ()=>{
@@ -97,6 +95,11 @@ nums.forEach( (num) =>{
     resultElement.innerHTML = 0
     num.addEventListener('click', () =>{
         clickTheNumber(num.innerHTML)
+        clearTouchClasses ()
+        num.classList.add('touch')
+        setTimeout(()=>{
+            num.classList.remove('touch')
+        }, 350)
     })
     
 })
@@ -115,7 +118,7 @@ dops.forEach(dopElement => {
         dopElement.classList.add('touch')
         setTimeout(()=>{
              dopElement.classList.remove('touch')
-        }, 700)
+        }, 350)
     })
 })
 

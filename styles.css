@@ -46,6 +46,7 @@ div{
   background:#313131;
   color: #f7f7f7;
   display: inline-block;
+  transition: all .35s ease-out;
 }
 
 .sub{
@@ -68,7 +69,7 @@ div{
   background: #a0a0a0;
   color: black;
   display: inline-block;
-  transition: all .7s ease-out;
+  transition: all .35s ease-out;
 }
 
 .touch{
