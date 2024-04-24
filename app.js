@@ -195,21 +195,21 @@ dops.forEach(dopElement => {
     })
 })
 
-btnSwitch.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme')
-    resultElement.classList.toggle('light-theme')
-    btnSwitch.classList.toggle('light-theme')
-    submitBtn.classList.toggle('light-theme')
-    nums.forEach( (num) =>{
-        num.classList.toggle('light-theme')
-    })
-    dops.forEach( (dop) =>{
-        dop.classList.toggle('light-theme')
-    })
-    ops.forEach( (op) =>{
-        op.classList.toggle('light-theme')
-    })
-  })
+// btnSwitch.addEventListener('click', () => {
+//     document.body.classList.toggle('light-theme')
+//     resultElement.classList.toggle('light-theme')
+//     btnSwitch.classList.toggle('light-theme')
+//     submitBtn.classList.toggle('light-theme')
+//     nums.forEach( (num) =>{
+//         num.classList.toggle('light-theme')
+//     })
+//     dops.forEach( (dop) =>{
+//         dop.classList.toggle('light-theme')
+//     })
+//     ops.forEach( (op) =>{
+//         op.classList.toggle('light-theme')
+//     })
+//   })
 
 
 

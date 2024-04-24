@@ -3,30 +3,138 @@
     padding: 0;
 }
 
+.container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+  'display display display display'
+  'ac change percent dev'
+  'seven eight nine mult'
+  'four five six minus'
+  'one two three plus';
+  gap: 7px;
+  width: 100px;
+  margin-bottom: 3px;
+  /* margin-top: 10px; */
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+ 'zero coma sub';
+ gap: 7px;
+ width: 100px;
+}
+
+.container,
+.wrapper {
+ margin: auto;
+}
+
+.result{grid-area: display;}
+.ac{grid-area: ac;}
+.change{grid-area: change;}
+.percent{grid-area: percent;}
+.one{grid-area: one;}
+.two{grid-area: two;}
+.three{grid-area: three;}
+.four{grid-area: four;}
+.five{grid-area: five;}
+.six{grid-area: six;}
+.seven{grid-area: seven;}
+.eight{grid-area: eight;}
+.nine{grid-area: nine;}
+.zero{grid-area: zero;}
+.coma{grid-area: coma;}
+.sub{grid-area: sub;}
+.dev{grid-area: dev;}
+.mult{grid-area: mult;}
+.plus{grid-area: plus;}
+.minus{grid-area: minus;}
+
+body{
+  background: black;  
+}
+
+
+.circle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  align-content: center;  
+  text-align: center; 
+  cursor: pointer;
+}
+/* .circle:hover {
+  background-color: #f7f7f7;
+} */
+
+.oval{
+  width: 100px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 20px;
+  align-content: center;  
+  text-align: center; 
+  cursor: pointer;
+}
+
+.nums{
+  background:#313131;
+  color: #f7f7f7;
+  transition: all .35s ease-out;
+}
+
+.sub{
+  background:#313131;
+  color: #f7f7f7;
+}
+
+.ops{
+  background: #e9a03b;
+  color: #f7f7f7;
+}
+
+.dops{
+  background: #a0a0a0;
+  color: black;
+  transition: all .35s ease-out;
+}
+
+.result{
+  font-size: 50px;
+  color: white;
+  text-align: end; 
+}
+
+.active{
+  background: #f7f7f7;
+  color: #e9a03b;
+}
+.touch{
+  background: #f7f7f7;
+  color: black;
+}
+
 .btn-toggle{
-  /* margin: 0 -63px; */
   background: #e9a03b;
   color: #f7f7f7;
   border: none;
 }
-
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none; 
   -ms-user-select: none; 
   user-select: none; 
 }
-
-body{
-  background: black;  
-}
-
 body.light-theme {
   background: #f7f7f7;
 }
-/* #f1f2f4 светлосерый для цвет для темных копок  */
-/* #dadbe0 темносерый для светлосерызх кнопок */
-/* ##ffa62e для желтого и текст блэк */
+
 .result .light-theme {
   color: black;
 }
@@ -51,7 +159,6 @@ body.light-theme {
   color: white;
 } 
 
-
 .ops.active-light{
   background: #f38c01;
   color: white;
@@ -60,137 +167,9 @@ body.light-theme {
 .nums.touch-light{
   background: #959393;
   color: black;
-  display: inline-block;
 }
 .dops.touch-light{
   background: #2c2c2c;
   color: white;
-  display: inline-block;
 }
 
-
-
-
-div{
-  box-sizing: border-box;
-}
-
-/* #e9a03b желтый кнопки операторов */
-/* #f7f7f7 белый сами цифры и оперы*/
-
-/* #a0a0a0 светло серый кнопки % =/- */
-/* #313131 темно серый кнопки цифр */
-.circle{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 20px;
-  align-content: center;  
-  text-align: center; 
-  cursor: pointer;
-}
-.oval{
-  width: 100px;
-  height: 50px;
-  border-radius: 30px;
-  font-size: 20px;
-  align-content: center;  
-  text-align: center; 
-  cursor: pointer;
-}
-
-.nums{
-  background:#313131;
-  color: #f7f7f7;
-  display: inline-block;
-  transition: all .35s ease-out;
-}
-
-.sub{
-  background:#313131;
-  color: #f7f7f7;
-  display: inline-block;
-}
-
-.ops{
-  background: #e9a03b;
-  color: #f7f7f7;
-}
-
-.active{
-  background: #f7f7f7;
-  color: #e9a03b;
-}
-
-.dops{
-  background: #a0a0a0;
-  color: black;
-  display: inline-block;
-  transition: all .35s ease-out;
-}
-
-.touch{
-  background: #f7f7f7;
-  color: black;
-  display: inline-block;
-  
-}
-
-
-.dopBlock{
-  /* display: flex; */
-  /* border: 2px solid red; */
-  position: absolute;
-  top: 50px;
-  
-}
-.numBlock1{
-  /* display: flex; */
-  /* border: 2px solid red; */
-  position: absolute;
-  top: 200px;
-}
-.numBlock2{
-  /* display: flex; */
-  /* border: 2px solid red; */
-  position: absolute;
-   top: 150px;
-}
-.numBlock3{
-  /* display: flex; */
-  /* border: 2px solid red; */
-  position: absolute;
-  top: 100px;
-}
-
-.opsBlock{
-  /* display:flex; */
-  /* border: 2px solid red; */
-  position: absolute;
-  left: 160px;
-  top: 50px;
-}
-.submit{
-   /* border: 2px solid red;  */
-   position: absolute;
-   top: 250px;
-}
-
-.result{
-  position: absolute;
-  right: 0;
-  max-width: 200px;
-  /* border: 2px solid red;  */
-  font-size: 50px;
-  color: white;
-}
-
-.container{
-/* display:flex; */
-  /* align-items: flex-start; */
- /* border: 2px solid blue; */
- position: relative;
- height: 300px;
- width: 215px;
- margin: auto;
-}
